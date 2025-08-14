@@ -4,43 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <!-- Use Tailwind CSS for a clean, modern look -->
+    <!-- Tailwind CSS for a modern, utility-first approach -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Use Inter font for a professional feel */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        /*
+        * Custom CSS to define a dark mode color palette
+        * and a new font pairing for a polished look.
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+        
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #0c1524; /* Dark blue-gray background */
+            color: #d1d5db; /* Light gray text for contrast */
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #e5e7eb; /* Off-white headings */
+        }
+        
+        /* Subtle glowing effect on button hover */
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); /* Blue glow */
+            transform: scale(1.05);
+        }
+
+        /* Gradient for project card borders on hover */
+        .project-card-border:hover {
+            border-color: transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(to right, #0c1524, #0c1524), linear-gradient(to right, #3b82f6, #60a5fa);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="antialiased">
 
     <!-- Header Section -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Who Am I</a>
+    <header class="bg-[#121c2c] shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
+            <a href="#" class="text-2xl font-bold text-gray-200 hover:text-blue-400 transition-colors">Who AM I</a>
             <nav>
                 <ul class="flex space-x-6 font-semibold">
-                    <li><a href="#about" class="hover:text-blue-600 transition-colors">About</a></li>
-                    <li><a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a></li>
-                    <li><a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                    <li><a href="#projects" class="text-gray-400 hover:text-blue-400 transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4">
-        <!-- Hero Section -->
-        <section id="hero" class="py-24 text-center">
-            <div class="max-w-2xl mx-auto">
-                <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
-                    Hello, I'm <span class="text-blue-600">Who Am I</span>.
+    <main class="container mx-auto px-4 max-w-7xl">
+        <!-- Hero Section - More visual impact with a gradient background -->
+        <section id="hero" class="py-24 text-center bg-gradient-to-br from-[#121c2c] to-[#0c1524] rounded-xl my-8">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-6xl md:text-7xl font-extrabold text-white leading-tight">
+                    Hello, I'm <span class="text-blue-400">WHho AM I</span>.
                 </h1>
-                <p class="mt-4 text-xl text-gray-600">
-                    A Passionate Software Developer focusing on modern web technologies.
+                <p class="mt-6 text-xl md:text-2xl text-gray-300 font-light">
+                    A Passionate Software Developer with a love for building innovative and responsive web applications.
                 </p>
-                <a href="#projects" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-colors transform hover:scale-105">
+                <a href="#projects" class="glow-on-hover mt-10 inline-block bg-blue-600 text-white font-bold py-4 px-10 rounded-full shadow-xl hover:bg-blue-700 transition-colors">
                     View My Work
                 </a>
             </div>
@@ -48,20 +76,20 @@
 
         <!-- About Me Section -->
         <section id="about" class="py-20">
-            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg">
-                <h2 class="text-4xl font-bold text-center text-gray-900 mb-6">About Me</h2>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="max-w-5xl mx-auto bg-[#1a2538] p-8 md:p-12 rounded-2xl shadow-xl border border-gray-700">
+                <h2 class="text-5xl font-bold text-center mb-10">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <p class="text-gray-600 leading-relaxed">
+                        <p class="text-gray-300 leading-relaxed text-lg">
                             I am a software developer with a strong foundation in frontend technologies such as **HTML**, **CSS**, and **JavaScript**, as well as backend frameworks like **Node.js**. I enjoy building user-friendly and responsive web applications. I am always eager to learn new technologies and improve my skills to create impactful solutions.
                         </p>
-                        <p class="mt-4 text-gray-600 leading-relaxed">
+                        <p class="mt-6 text-gray-300 leading-relaxed text-lg">
                             My journey in programming started with a curiosity for how things work, which quickly grew into a passion for building and creating. I believe in writing clean, efficient, and maintainable code. When I'm not coding, I enjoy hiking and photography.
                         </p>
                     </div>
-                    <!-- Placeholder image -->
-                    <div class="flex justify-center">
-                        <img src="https://placehold.co/400x400/E5E7EB/4B5563?text=Profile+Image" alt="Placeholder Profile Image" class="rounded-full shadow-md w-64 h-64 object-cover border-4 border-white">
+                    <!-- Profile image with a sleek container -->
+                    <div class="flex justify-center p-4">
+                        <img src="whoami.jpg" alt="Your Profile Image" class="rounded-full shadow-2xl w-64 h-64 md:w-72 md:h-72 object-cover border-4 border-blue-400 transform transition-transform hover:scale-105">
                     </div>
                 </div>
             </div>
@@ -69,83 +97,82 @@
 
         <!-- Skills Section -->
         <section id="skills" class="py-20">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Skills</h2>
-            <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Example Skill Cards -->
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">JavaScript</h3>
+            <h2 class="text-5xl font-bold text-center mb-12">My Skills</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Skill Card with a subtle gradient on hover -->
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">JavaScript</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">HTML5</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">HTML5</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">CSS3</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">CSS3</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">React</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">React</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">Node.js</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">Node.js</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">Python</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">Python</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">Git</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">Git</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold">SQL</h3>
+                <div class="bg-[#1a2538] p-6 rounded-xl shadow-lg text-center border border-gray-700 hover:border-blue-400 transition-colors transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-gray-200">SQL</h3>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section - Cards with a more pronounced hover effect -->
         <section id="projects" class="py-20">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Projects</h2>
+            <h2 class="text-5xl font-bold text-center mb-12">My Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <!-- Placeholder image -->
-                    <img src="https://placehold.co/600x400/E5E7EB/4B5563?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                <div class="bg-[#1a2538] rounded-2xl shadow-lg overflow-hidden border border-gray-700 project-card-border hover:shadow-2xl transition-shadow">
+                    <img src="https://placehold.co/600x400/2f3a52/E5E7EB?text=Project+1" alt="Project 1" class="w-full h-48 object-cover transform transition-transform hover:scale-105">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900">Project Title 1</h3>
-                        <p class="mt-2 text-gray-600">A brief description of your project. Mention its purpose, technologies used, and what you learned from it.</p>
+                        <h3 class="text-3xl font-bold text-gray-200">Project Title 1</h3>
+                        <p class="mt-2 text-gray-400">A brief description of your project. Mention its purpose, technologies used, and what you learned from it.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded-full">React</span>
-                            <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Express</span>
+                            <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-green-600 text-white text-sm font-medium px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-yellow-600 text-white text-sm font-medium px-3 py-1 rounded-full">Express</span>
                         </div>
-                        <a href="#" class="mt-6 inline-block text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                        <a href="#" class="mt-6 inline-block text-blue-400 font-semibold hover:underline">View Project &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/E5E7EB/4B5563?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                <div class="bg-[#1a2538] rounded-2xl shadow-lg overflow-hidden border border-gray-700 project-card-border hover:shadow-2xl transition-shadow">
+                    <img src="https://placehold.co/600x400/2f3a52/E5E7EB?text=Project+2" alt="Project 2" class="w-full h-48 object-cover transform transition-transform hover:scale-105">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900">Project Title 2</h3>
-                        <p class="mt-2 text-gray-600">A brief description of your project. Mention its purpose, technologies used, and what you learned from it.</p>
+                        <h3 class="text-3xl font-bold text-gray-200">Project Title 2</h3>
+                        <p class="mt-2 text-gray-400">A brief description of your project. Mention its purpose, technologies used, and what you learned from it.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="bg-pink-100 text-pink-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Django</span>
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium px-2.5 py-0.5 rounded-full">SQL</span>
+                            <span class="bg-purple-600 text-white text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-pink-600 text-white text-sm font-medium px-3 py-1 rounded-full">Django</span>
+                            <span class="bg-gray-500 text-white text-sm font-medium px-3 py-1 rounded-full">SQL</span>
                         </div>
-                        <a href="#" class="mt-6 inline-block text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                        <a href="#" class="mt-6 inline-block text-blue-400 font-semibold hover:underline">View Project &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/E5E7EB/4B5563?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                <div class="bg-[#1a2538] rounded-2xl shadow-lg overflow-hidden border border-gray-700 project-card-border hover:shadow-2xl transition-shadow">
+                    <img src="https://placehold.co/600x400/2f3a52/E5E7EB?text=Project+3" alt="Project 3" class="w-full h-48 object-cover transform transition-transform hover:scale-105">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900">Project Title 3</h3>
-                        <p class="mt-2 text-gray-600">A brief description of your project. Mention its purpose, technologies used, and what you learned from it.</p>
+                        <h3 class="text-3xl font-bold text-gray-200">Project Title 3</h3>
+                        <p class="mt-2 text-gray-400">A brief description of your project. Mention its purpose, technologies used, and what you learned from it.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-2.5 py-0.5 rounded-full">HTML</span>
-                            <span class="bg-red-100 text-red-800 text-sm font-medium px-2.5 py-0.5 rounded-full">CSS</span>
-                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-indigo-600 text-white text-sm font-medium px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-red-600 text-white text-sm font-medium px-3 py-1 rounded-full">CSS</span>
+                            <span class="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
                         </div>
-                        <a href="#" class="mt-6 inline-block text-blue-600 font-semibold hover:underline">View Project &rarr;</a>
+                        <a href="#" class="mt-6 inline-block text-blue-400 font-semibold hover:underline">View Project &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -153,26 +180,31 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-20">
-            <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg text-center">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-                <p class="text-gray-600 mb-8">
+            <div class="max-w-3xl mx-auto bg-[#1a2538] p-8 md:p-12 rounded-2xl shadow-xl text-center border border-gray-700">
+                <h2 class="text-5xl font-bold text-white mb-6">Get in Touch</h2>
+                <p class="text-gray-300 mb-8 text-lg">
                     I'm always open to new opportunities and collaborations. Feel free to connect with me!
                 </p>
-                <div class="flex justify-center space-x-6">
-                    <!-- Social Media Links (use icons in a real project) -->
-                    <a href="mailto:youremail@example.com" class="text-blue-600 font-semibold hover:underline">Email</a>
-                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="text-blue-600 font-semibold hover:underline">LinkedIn</a>
-                    <a href="https://github.com/your-username" target="_blank" class="text-blue-600 font-semibold hover:underline">GitHub</a>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <!-- Social Media Links with button-like styling -->
+                    <a href="mailto:youremail@example.com" class="glow-on-hover text-white font-bold py-3 px-6 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
+                        Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors font-semibold">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/your-username" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors font-semibold">
+                        GitHub
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
-        <p>&copy; 2024 Who Am I . All rights reserved.</p>
+    <footer class="bg-[#121c2c] text-gray-400 text-center p-6 mt-12">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-
